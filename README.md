@@ -55,4 +55,12 @@ A Passing grade will be based on the following criteria:
 
    - An interface that allows the user to interact with all of an object's methods, and the option to continue interacting or exit.
 
+# Welcome to your recipe book
+- Choose "Grocery list, Food at home, or Recipes", from the menu options
+- In your "Grocery list" you can add ingredients that you need to buy. 
+- In "Food at home" you will see all of the ingredients you already have, that correlate with your saved recipes.
+- "Recipes" will show you all of your saved recipes.
+   All of the ingredients listed in red are the items you dont have already at home
+- Press q to exit the program
+
 
