@@ -7,7 +7,7 @@ namespace Choose_Your_Class
     {
         //
         static Groceries Groceries = new Groceries();
-        static Kitchen Kitchen = new Kitchen();
+        static Kitchen Kitchen = new Kitchen(Groceries);
         static void Main(string[] args)
         {
             bool keepLooping = true;
@@ -42,15 +42,15 @@ namespace Choose_Your_Class
                         break;
 
                     case "4":
-                        Kitchen.PrintGroceryList();
+                        Kitchen.ItemsAtHome.PrintGroceryList();
                         break;
 
                     case "5":
-                        Kitchen.AddItem();
+                        Kitchen.Transfer();
                         break;
 
                     case "6":
-                        Kitchen.RemoveItem();
+                        Kitchen.ItemsAtHome.RemoveItem();
                         break;
 
                     case "q":

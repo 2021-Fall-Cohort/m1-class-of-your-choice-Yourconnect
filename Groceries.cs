@@ -8,9 +8,17 @@ namespace Choose_Your_Class
 
         public List<string> GroceryList = new List<string>();
 
+        public Groceries()
+        {
+            GroceryList = new List<string>();
+        }
+        public void AddItem(string item)
+        {
+            GroceryList.Add(item);
+        }
         public void AddItem()
         {
-            //Create a while loop that keeps letting the user add items
+            
             bool keepAdding = true;
             while (keepAdding)
             {
@@ -26,37 +34,52 @@ namespace Choose_Your_Class
                 {
                     GroceryList.Add(itemToAdd);
                     Console.Clear();
-                    Console.WriteLine("Press enter to add another item");
-                    Console.WriteLine("Type back to return to main menu");
-                    Console.ReadLine().ToLower();
+                   //Console.WriteLine("Press enter to add another item");
+                   //Console.WriteLine("Type back to return to main menu");
+                   //Console.Read();
                 }
             }
         }
 
         public void RemoveItem()
         {
-            for (int i = 0; i < GroceryList.Count; i++)
+            for (int i = 1; i < GroceryList.Count; i++)
             {
-                // 0: Apple
-                Console.WriteLine(i + ": " + GroceryList[i]);
+
+                Console.WriteLine(i + ".  " + GroceryList[i-1]);
             }
             Console.Write("What item number would you like to remove?");
             int itemToRemove = Convert.ToInt32(Console.ReadLine());
-            GroceryList.RemoveAt(itemToRemove);
+            GroceryList.RemoveAt(itemToRemove-1);
             Console.Write("Press enter to return to the Main Menu");
-            Console.ReadLine();
+            Console.ReadKey();
         }
 
-        public void PrintGroceryList()
+        public void RemoveItem(string item)
         {
-            // GroceryList
-            // apple, banana, orange, cabbage
-            // 0    ,   1,       2  ,    3 , ...
-            // GroceryList[0] => apple
+            GroceryList.Remove(item);
+        }
+        public string SelectGroceryListItem()
+        {
 
-            for(int i = 0; i < GroceryList.Count; i++)
+            for (int i = 1; i <= GroceryList.Count; i++)
             {
-                Console.WriteLine(i + ": " + GroceryList[i]);
+                Console.WriteLine(i + ".  " + GroceryList[i - 1]);
+            }
+            Console.Write("What item number would you like to transfer to your kitchen?");
+            int indexSelected = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Press enter to return to the Main Menu");
+            Console.ReadLine();
+
+            return GroceryList[indexSelected - 1];
+        }
+        public void PrintGroceryList()
+        {         
+
+            for(int i = 1; i <= GroceryList.Count; i++)
+            {
+                Console.WriteLine(i + ".  " + GroceryList[i-1]);
             }
 
             Console.Write("Press enter to return to the Main Menu");
